@@ -1,119 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Inter, system-ui, sans-serif;
 }
 
 body {
-  min-height: 100vh;
-  background: #0e0e11;
-  color: #fff;
+  font-family: 'Playfair Display', serif;
+  background: #0c1410;
+  color: #f3f4f1;
   overflow-x: hidden;
 }
 
-/* Градиентный фон */
-.background-gradient {
+/* Туман */
+.mist {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(circle at top left, #3b82f6, transparent 40%),
-    radial-gradient(circle at bottom right, #22c55e, transparent 40%);
-  opacity: 0.35;
+    radial-gradient(circle at bottom, rgba(255,255,255,0.08), transparent 60%);
+  animation: mistMove 12s ease-in-out infinite alternate;
   z-index: -1;
 }
 
+@keyframes mistMove {
+  from { transform: translateY(0); }
+  to { transform: translateY(-40px); }
+}
+
+/* Шапка */
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.phone {
+  text-decoration: none;
+  color: #d4af37;
+  font-weight: 600;
+}
+
+/* Контейнер */
 .container {
   max-width: 1100px;
   margin: auto;
-  padding: 40px 20px;
+  padding: 20px;
 }
 
-/* Hero */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 40px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.4);
+/* Карусель */
+.carousel {
+  overflow: hidden;
+  border-radius: 22px;
+  margin-bottom: 40px;
 }
 
-/* Заглушка вместо фото */
-.image-placeholder {
-  border-radius: 20px;
-  background: linear-gradient(135deg, #2563eb, #22c55e);
+.carousel-track {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  opacity: 0.8;
+  animation: slide 18s infinite;
 }
 
-/* Контент */
+.slide {
+  min-width: 100%;
+  height: 320px;
+  background-size: cover;
+  background-position: center;
+}
+
+.slide1 {
+  background: linear-gradient(135deg, #355f4b, #1f3d2b);
+}
+.slide2 {
+  background: linear-gradient(135deg, #5a3e2b, #2d1b12);
+}
+.slide3 {
+  background: linear-gradient(135deg, #4b6b5a, #1b2f26);
+}
+
+@keyframes slide {
+  0%, 25% { transform: translateX(0); }
+  33%, 58% { transform: translateX(-100%); }
+  66%, 100% { transform: translateX(-200%); }
+}
+
+/* Основной блок */
+.hero {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(18px);
+  border-radius: 26px;
+  padding: 40px;
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .content h1 {
-  font-size: 40px;
-  line-height: 1.1;
+  font-size: 42px;
   margin-bottom: 20px;
 }
 
 .content p {
+  max-width: 420px;
   opacity: 0.85;
   margin-bottom: 30px;
-  max-width: 400px;
 }
 
 /* Форма */
 .form {
   display: grid;
-  gap: 16px;
+  gap: 14px;
+  max-width: 360px;
 }
 
-.field label {
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-.field input {
-  width: 100%;
-  padding: 14px 16px;
-  border-radius: 12px;
+.form input {
+  padding: 14px;
+  border-radius: 14px;
   border: none;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.12);
   color: #fff;
-  outline: none;
+}
+
+.form input:focus {
+  outline: 2px solid #d4af37;
+}
+
+.form button {
+  margin-top: 10px;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(135deg, #d4af37, #8f6b1f);
+  color: #1a1a1a;
+  font-size: 16px;
+  cursor: pointer;
   transition: 0.3s;
 }
 
-.field input:focus {
-  background: rgba(255,255,255,0.18);
-  box-shadow: 0 0 0 2px #3b82f6;
-}
-
-/* Кнопка */
-.btn {
-  margin-top: 10px;
-  padding: 16px;
-  border-radius: 14px;
-  border: none;
-  background: linear-gradient(135deg, #3b82f6, #22c55e);
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.btn:hover {
+.form button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+  box-shadow: 0 10px 25px rgba(0,0,0,.4);
 }
 
 .success {
   margin-top: 20px;
-  color: #22c55e;
-  font-weight: 500;
+  color: #d4af37;
 }
 
 .hidden {
@@ -121,12 +160,12 @@ body {
 }
 
 /* Адаптив */
-@media (max-width: 900px) {
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
+@media (max-width: 768px) {
   .content h1 {
     font-size: 32px;
+  }
+
+  .slide {
+    height: 220px;
   }
 }
