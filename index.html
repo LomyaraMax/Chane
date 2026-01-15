@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Бронь горячей воды</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="background-gradient"></div>
+
+  <main class="container">
+    <section class="hero">
+      <div class="image-placeholder">
+        <span>Фото будет здесь</span>
+      </div>
+
+      <div class="content">
+        <h1>Бронь времени<br>с горячей водой</h1>
+        <p>
+          Успей забронировать удобное время.
+          Просто, быстро и без очередей.
+        </p>
+
+        <form id="bookingForm" class="form">
+          <div class="field">
+            <label>Ваше имя</label>
+            <input type="text" required placeholder="Введите имя">
+          </div>
+
+          <div class="field">
+            <label>Телефон</label>
+            <input type="tel" required placeholder="+380 XX XXX XX XX">
+          </div>
+
+          <div class="field">
+            <label>Дата</label>
+            <input type="date" required>
+          </div>
+
+          <div class="field">
+            <label>Время</label>
+            <input type="time" required>
+          </div>
+
+          <button type="submit" class="btn">
+            Забронировать
+          </button>
+        </form>
+
+        <div id="success" class="success hidden">
+          ✅ Заявка отправлена
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
