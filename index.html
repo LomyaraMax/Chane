@@ -2,55 +2,58 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Карпатська вода | Бронювання</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <title>Бронювання гарячої води</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Фон -->
-  <div class="background"></div>
+<div class="background"></div>
 
-  <header class="header">
-    <div class="logo">Карпатська Вода</div>
-    <a href="tel:+380000000000" class="phone">📞 +38 (000) 000-00-00</a>
+<div class="container">
+
+  <header class="hero">
+    <h1>Гаряча вода в Карпатах</h1>
+    <p>Комфортне бронювання часу для вашого відпочинку</p>
   </header>
 
-  <main class="container">
+  <section class="carousel">
+    <div class="carousel-track">
+      <div class="slide"></div>
+      <div class="slide"></div>
+      <div class="slide"></div>
+    </div>
+  </section>
 
-    <!-- Карусель -->
-    <section class="carousel">
-      <div class="carousel-track">
-        <div class="slide slide1"></div>
-        <div class="slide slide2"></div>
-        <div class="slide slide3"></div>
-      </div>
-    </section>
+  <section class="card">
+    <h2>Залишити заявку</h2>
 
-    <!-- Контент -->
-    <section class="card">
-      <h1>Тепло Карпат<br>у зручний час</h1>
-      <p>
-        Спокій, комфорт і гаряча вода —
-        без черг та зайвих клопотів.
-      </p>
+    <form class="booking-form">
+      <input type="text" placeholder="Ваше ім’я" required>
+      <input type="tel" placeholder="Номер телефону" required>
+      <input type="date" required>
+      <input type="time" required>
+      <button type="submit">Забронювати</button>
+    </form>
 
-      <form id="form" class="form">
-        <input type="text" placeholder="Ваше ім’я" required>
-        <input type="tel" placeholder="Телефон" required>
-        <input type="date" required>
-        <input type="time" required>
+    <a href="tel:+380000000000" class="phone">
+      📞 Зателефонувати
+    </a>
+  </section>
 
-        <button type="submit">Забронювати</button>
-      </form>
+  <footer class="footer">
+    Карпати · Затишок · Тепло
+  </footer>
 
-      <div id="success" class="success hidden">
-        ✔️ Заявку прийнято
-      </div>
-    </section>
+</div>
 
-  </main>
-
-  <script src="js/main.js"></script>
+<script src="main.js"></script>
 </body>
 </html>
