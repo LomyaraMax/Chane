@@ -1,117 +1,59 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-html, body {
-  width: 100%;
-  min-height: 100vh;
-  overflow-x: hidden;
-}
+  <title>Бронювання гарячої води</title>
 
-body {
-  font-family: 'Inter', sans-serif;
-  background: #0f1a14;
-  color: #f4f4f2;
-}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background:
-    radial-gradient(circle at bottom, rgba(255,255,255,0.06), transparent 60%),
-    linear-gradient(#0f1a14, #1a2a21);
-  z-index: -1;
-}
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
-  min-height: 100vh;
-}
+<div class="background"></div>
 
-.hero {
-  text-align: center;
-  margin: 60px 0;
-}
+<div class="container">
 
-.hero h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  margin-bottom: 10px;
-}
+  <header class="hero">
+    <h1>Гаряча вода в Карпатах</h1>
+    <p>Комфортне бронювання часу для вашого відпочинку</p>
+  </header>
 
-.hero p {
-  opacity: 0.85;
-}
+  <section class="carousel">
+    <div class="carousel-track">
+      <div class="slide"></div>
+      <div class="slide"></div>
+      <div class="slide"></div>
+    </div>
+  </section>
 
-.carousel {
-  overflow: hidden;
-  border-radius: 18px;
-  margin-bottom: 40px;
-}
+  <section class="card">
+    <h2>Залишити заявку</h2>
 
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease;
-}
+    <form class="booking-form">
+      <input type="text" placeholder="Ваше ім’я" required>
+      <input type="tel" placeholder="Номер телефону" required>
+      <input type="date" required>
+      <input type="time" required>
+      <button type="submit">Забронювати</button>
+    </form>
 
-.slide {
-  min-width: 100%;
-  height: 220px;
-  background: linear-gradient(135deg, #3a5f4b, #1f3b2d);
-}
+    <a href="tel:+380000000000" class="phone">
+      📞 Зателефонувати
+    </a>
+  </section>
 
-.card {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 30px;
-}
+  <footer class="footer">
+    Карпати · Затишок · Тепло
+  </footer>
 
-.card h2 {
-  font-family: 'Playfair Display', serif;
-  margin-bottom: 20px;
-}
+</div>
 
-.booking-form {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-
-.booking-form input {
-  padding: 14px;
-  font-size: 16px;
-  border-radius: 12px;
-  border: none;
-}
-
-.booking-form button {
-  padding: 14px;
-  border-radius: 14px;
-  border: none;
-  font-size: 16px;
-  background: #5da27c;
-  color: #0f1a14;
-  cursor: pointer;
-}
-
-.phone {
-  display: block;
-  margin-top: 20px;
-  text-align: center;
-  color: #a8e0c2;
-  text-decoration: none;
-}
-
-.footer {
-  text-align: center;
-  margin: 50px 0 20px;
-  opacity: 0.6;
-}
+<script src="main.js"></script>
+</body>
+</html>
