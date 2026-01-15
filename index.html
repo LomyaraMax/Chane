@@ -1,57 +1,66 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Бронь горячей воды | Карпаты</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Карпатська вода — бронювання</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- Фон -->
-  <div class="mist"></div>
+  <!-- Атмосферный фон -->
+  <div class="bg"></div>
 
-  <header class="top">
-    <div class="logo">Карпатська Вода</div>
-    <a href="tel:+380000000000" class="phone">📞 +38 (000) 000-00-00</a>
+  <header class="header">
+    <div class="brand">Карпатська Вода</div>
+    <a href="tel:+380000000000" class="call">📞 +38 (000) 000-00-00</a>
   </header>
 
-  <main class="container">
+  <main class="layout">
 
-    <!-- Карусель -->
-    <section class="carousel">
-      <div class="carousel-track">
-        <div class="slide slide1"></div>
-        <div class="slide slide2"></div>
-        <div class="slide slide3"></div>
+    <!-- КАРУСЕЛЬ -->
+    <section class="slider" id="slider">
+      <div class="slider-track">
+        <div class="slide s1"></div>
+        <div class="slide s2"></div>
+        <div class="slide s3"></div>
+      </div>
+
+      <div class="dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
       </div>
     </section>
 
-    <!-- Контент -->
-    <section class="hero">
-      <div class="content">
-        <h1>Тепло Карпат<br>у зручний час</h1>
-        <p>
-          Забронюйте час для гарячої води.
-          Спокій, комфорт і турбота — як у горах.
-        </p>
+    <!-- КАРТОЧКА -->
+    <section class="card">
+      <h1>Тепло Карпат<br>у зручний час</h1>
+      <p>
+        Затишок, гаряча вода та спокій —
+        усе без черг і метушні.
+      </p>
 
-        <form id="bookingForm" class="form">
-          <input type="text" placeholder="Ваше ім’я" required>
-          <input type="tel" placeholder="Телефон" required>
-          <input type="date" required>
-          <input type="time" required>
+      <form class="form" id="form">
+        <input type="text" placeholder="Ваше ім’я" required>
+        <input type="tel" placeholder="Телефон" required>
+        <input type="date" required>
+        <input type="time" required>
 
-          <button type="submit">Забронювати</button>
-        </form>
+        <button type="submit">Забронювати</button>
+      </form>
 
-        <div id="success" class="success hidden">
-          ✔️ Заявку прийнято. Чекаємо на вас
-        </div>
+      <div class="success hidden" id="success">
+        ✔️ Заявку прийнято
       </div>
     </section>
 
   </main>
+
+  <!-- FULLSCREEN VIEW -->
+  <div class="viewer hidden" id="viewer">
+    <div class="viewer-img"></div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
